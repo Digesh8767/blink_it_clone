@@ -95,250 +95,257 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 40,
-          ),
-          Stack(
-            children: [
-              Container(
-                height: 190,
-                width: double.infinity,
-                color: Color(0XFFF7CB45),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        UiHelper.customText(
-                          text: "Blinkit in",
-                          color: Color(0xFF000000),
-                          fontWeight: FontWeight.w700,
-                          fontSize: 15,
-                          fontFamily: "bold",
-                        ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  height: 190,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.yellow, // Blinkit yellow
+                        Colors.white,
                       ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
                     ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        UiHelper.customText(
-                          text: "16 minutes",
-                          color: Color(0XFF000000),
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                          fontFamily: "bold",
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 20,
-                        ),
-                        UiHelper.customText(
-                          text: "HOME",
-                          color: Color(0xFF000000),
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                        ),
-                        UiHelper.customText(
-                          text: "- Digesh Kapadiya, Plasava, Junagadh",
-                          color: Color(0xFF000000),
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Positioned(
-                right: 20,
-                bottom: 100,
-                child: CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.black,
-                    size: 20,
                   ),
-                ),
-              ),
-              Positioned(
-                bottom: 30,
-                left: 20,
-                child: UiHelper.customTextField(controller: searchController),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 20,
-              ),
-              UiHelper.customText(
-                text: "Grocery & Kitchen",
-                color: Color(0xFF000000),
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                fontFamily: "bold",
-              )
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Expanded(
-            flex: 5,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: groceryKitchen.length,
-                itemBuilder: (context, index) {
-                  return Column(
+                  child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Container(
-                          height: 78,
-                          width: 71,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Color(0xFFD9EBEB)),
-                          child: UiHelper.customImage(
-                              img: groceryKitchen[index]["img"].toString()),
-                        ),
+                      SizedBox(
+                        height: 30,
                       ),
-                      UiHelper.customText(
-                        text: groceryKitchen[index]["text"].toString(),
-                        color: Color(0xFF000000),
-                        fontWeight: FontWeight.normal,
-                        fontSize: 10,
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 20,
+                          ),
+                          UiHelper.customText(
+                            text: "Blinkit in",
+                            color: Color(0xFF000000),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 15,
+                            fontFamily: "bold",
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 20,
+                          ),
+                          UiHelper.customText(
+                            text: "16 minutes",
+                            color: Color(0XFF000000),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20,
+                            fontFamily: "bold",
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 20,
+                          ),
+                          UiHelper.customText(
+                            text: "HOME",
+                            color: Color(0xFF000000),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14,
+                          ),
+                          UiHelper.customText(
+                            text: "- Digesh Kapadiya, Plasava, Junagadh",
+                            color: Color(0xFF000000),
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                          ),
+                        ],
                       )
                     ],
-                  );
-                },
-              ),
+                  ),
+                ),
+                Positioned(
+                  right: 20,
+                  bottom: 100,
+                  child: CircleAvatar(
+                    radius: 15,
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.black,
+                      size: 20,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 30,
+                  left: 20,
+                  child: UiHelper.customTextField(controller: searchController),
+                )
+              ],
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Expanded(
-            flex: 5,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Container(
-                          height: 78,
-                          width: 71,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color(0xFFD9EBEB),
-                          ),
-                          child: UiHelper.customImage(
-                            img: secondGrocery[index]["img"].toString(),
+            SizedBox(
+              height: 30,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                UiHelper.customText(
+                  text: "Grocery & Kitchen",
+                  color: Color(0xFF000000),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  fontFamily: "bold",
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Expanded(
+              flex: 6,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: groceryKitchen.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Container(
+                            height: 78,
+                            width: 71,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color(0xFFD9EBEB)),
+                            child: UiHelper.customImage(
+                                img: groceryKitchen[index]["img"].toString()),
                           ),
                         ),
-                      ),
-                      UiHelper.customText(
-                        text: secondGrocery[index]["text"].toString(),
-                        color: Color(0xFF000000),
-                        fontWeight: FontWeight.normal,
-                        fontSize: 10,
-                      ),
-                    ],
-                  );
-                },
-                itemCount: secondGrocery.length,
-                scrollDirection: Axis.horizontal,
+                        UiHelper.customText(
+                          text: groceryKitchen[index]["text"].toString(),
+                          color: Color(0xFF000000),
+                          fontWeight: FontWeight.normal,
+                          fontSize: 10,
+                        )
+                      ],
+                    );
+                  },
+                ),
               ),
             ),
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 20,
-              ),
-              UiHelper.customText(
-                text: "Snacks & Drinks",
-                color: Color(0xFF000000),
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                fontFamily: "bold",
-              ),
-            ],
-          ),
-          Expanded(
-            flex: 5,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Container(
-                          height: 78,
-                          width: 71,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Color(0xFFD9EBEB),
-                          ),
-                          child: UiHelper.customImage(
-                            img: snacksDrinks[index]["img"].toString(),
+            SizedBox(
+              height: 10,
+            ),
+            Expanded(
+              flex: 6,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Container(
+                            height: 78,
+                            width: 71,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color(0xFFD9EBEB),
+                            ),
+                            child: UiHelper.customImage(
+                              img: secondGrocery[index]["img"].toString(),
+                            ),
                           ),
                         ),
-                      ),
-                      UiHelper.customText(
-                        text: snacksDrinks[index]["text"].toString(),
-                        color: Color(0xFF000000),
-                        fontWeight: FontWeight.normal,
-                        fontSize: 10,
-                      ),
-                    ],
-                  );
-                },
-                itemCount: snacksDrinks.length,
-                scrollDirection: Axis.horizontal,
+                        UiHelper.customText(
+                          text: secondGrocery[index]["text"].toString(),
+                          color: Color(0xFF000000),
+                          fontWeight: FontWeight.normal,
+                          fontSize: 10,
+                        ),
+                      ],
+                    );
+                  },
+                  itemCount: secondGrocery.length,
+                  scrollDirection: Axis.horizontal,
+                ),
               ),
             ),
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 20,
+            Row(
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                UiHelper.customText(
+                  text: "Snacks & Drinks",
+                  color: Color(0xFF000000),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  fontFamily: "bold",
+                ),
+              ],
+            ),
+            Expanded(
+              flex: 6,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Container(
+                            height: 78,
+                            width: 71,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color(0xFFD9EBEB),
+                            ),
+                            child: UiHelper.customImage(
+                              img: snacksDrinks[index]["img"].toString(),
+                            ),
+                          ),
+                        ),
+                        UiHelper.customText(
+                          text: snacksDrinks[index]["text"].toString(),
+                          color: Color(0xFF000000),
+                          fontWeight: FontWeight.normal,
+                          fontSize: 10,
+                        ),
+                      ],
+                    );
+                  },
+                  itemCount: snacksDrinks.length,
+                  scrollDirection: Axis.horizontal,
+                ),
               ),
-              UiHelper.customText(
-                text: "Household Essentials",
-                color: Color(0xFF000000),
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                fontFamily: "bold",
-              )
-            ],
-          ),
-          Expanded(
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                UiHelper.customText(
+                  text: "Household Essentials",
+                  color: Color(0xFF000000),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  fontFamily: "bold",
+                )
+              ],
+            ),
+            Expanded(
               flex: 5,
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0),
@@ -362,8 +369,10 @@ class CategoryScreen extends StatelessWidget {
                   itemCount: houseHolds.length,
                   scrollDirection: Axis.horizontal,
                 ),
-              ))
-        ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
