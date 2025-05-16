@@ -1,5 +1,5 @@
 import 'package:blink_it/repository/screens/bottomNav/bottom_nav_screen.dart';
-import 'package:blink_it/repository/screens/home/home_screen.dart';
+
 import 'package:blink_it/repository/widgets/ui_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                       height: 20,
                     ),
                     UiHelper.customText(
-                      text: "Sujal",
+                      text: "Digesh",
                       color: Color(0xFF000000),
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
