@@ -21,7 +21,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Colors.yellow,
+                Colors.yellow.shade600,
                 Colors.white,
               ],
               begin: Alignment.topCenter,
