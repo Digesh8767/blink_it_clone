@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
 class UiHelper {
-  static customImage({required String img}) {
-    return Image.asset("assets/images/$img");
+  static customImage({
+    required String img,
+    double? height,
+    double? width,
+  }) {
+    return Image.asset(
+      "assets/images/$img",
+      height: height,
+      width: width,
+    );
   }
 
   static customText({

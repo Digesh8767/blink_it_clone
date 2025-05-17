@@ -33,7 +33,9 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [UiHelper.customImage(img: "blink_it.png")],
+          children: [
+            UiHelper.customImage(img: "blink_it.png"),
+          ],
         ),
       ),
     );
