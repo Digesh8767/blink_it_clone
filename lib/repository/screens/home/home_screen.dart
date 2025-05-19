@@ -88,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                         text: "Mega Diwali Sale",
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 18,
                         fontFamily: "bold",
                       ),
                       UiHelper.customImage(img: "cracker 3.png"),
